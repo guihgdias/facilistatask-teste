@@ -1,0 +1,27 @@
+@font-face {
+    font-family: GilroyBold;
+    src: url(../assets/fonts/SVN-Gilroy\ Bold.ttf);
+}
+
+@font-face {
+    font-family: GilroyNormal;
+    src: url(../assets/fonts/SVN-Gilroy\ Regular.ttf);
+}
+
+:root {
+    font-size: 15px;
+    --main: #2693FF;
+    --white: #FFFFFF;
+    --modalImage: #EDF6FC;
+    --lighter: #BFDAEB;
+    --green: #1AD18F;
+    --orange: #FFC42E;
+    --pink: #FF2E79;
+    --black: #000000;
+    --box-active: #1182F2;
+    --modal: rgba(70, 94, 119, 0.6);
+    --checkbox: #E2EEF5;
+    --border: #46A3FF;
+    --dark: #283848;
+    --semi-dark: #4E657B;
+}

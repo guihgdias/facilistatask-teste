@@ -1,0 +1,34 @@
+.menu-box {
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--border); 
+    user-select: none;
+    cursor: pointer;   
+}
+
+.menu-box:first-child {
+    border-top: 1px solid var(--border);
+}
+
+.menu-box:hover {
+    background: var(--box-active);
+}
+
+.menu-box.-active {
+    background: var(--box-active);
+}
+
+.menu-box .icon {
+    max-width: 33px;
+    object-fit: cover;
+}
+
+.menu-box .menuName {
+    margin: 5px 0px;
+    color: var(--white);
+    font-size: 0.95rem;
+    font-family: 'GilroyBold';
+}

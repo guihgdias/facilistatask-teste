@@ -1,0 +1,27 @@
+.main-title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: var(--white);
+    font-weight: bold;
+    font-family: 'GilroyBold';
+}
+
+.main-title .light {
+    font-weight: lighter;
+}
+
+.main-title.-margBot {
+    margin-bottom: 35px;
+}
+
+.main-title.-dark {
+    color: var(--dark);
+}
+
+.main-title.-normalcase {
+    text-transform: capitalize;
+}
+
+.main-title.-medium {
+    font-size: 2rem;
+}

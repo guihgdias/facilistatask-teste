@@ -1,0 +1,33 @@
+.main-button {
+    display: block;
+    padding: 18px;
+    width: 100%;
+    background: var(--green);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+}
+
+.main-button.-fixWidth {
+    width: 120px;
+}
+
+.main-button.-warning{
+    background: var(--pink)
+}
+
+.main-button.-margBot {
+    margin-bottom: 35px;
+}
+
+.main-button.-margAll {
+    margin: 5px;
+}
+
+.main-button.-pdModal {
+    padding: 12px 25px;
+}

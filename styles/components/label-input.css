@@ -1,0 +1,39 @@
+.label-input .labelText {
+    display: block;
+    color: var(--semi-dark);
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.label-input .inputText {
+    outline-color: var(--main);
+    border: 2px solid var(--lighter);
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: var(--dark);
+    border-radius: 5px;
+    margin: 5px 0px 20px 0px;
+    padding: 16px 10px;
+    width: 100%;
+}
+
+.label-input .labelText.-flxCC {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.label-input .inputText.-textArea {
+    resize: none;
+    height: 180px;
+}
+
+.label-input .inputRadio {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+.label-input.-margRight {
+    margin-right: 10px;
+}

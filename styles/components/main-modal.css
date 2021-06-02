@@ -1,0 +1,49 @@
+.main-modal {
+    position: absolute;
+    z-index: 999;
+    background: var(--modal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: 20px;
+}
+
+.main-modal.-hidden {
+    display: none;
+}
+
+.main-modal .modalArea {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.main-modal .modalArea .iconArea {
+    padding: 35px;
+    background: var(--modalImage);
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px -13px var(--dark);
+}
+
+.main-modal .modalArea .iconArea .icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.main-modal .closeModal {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+    padding: 20px;
+}

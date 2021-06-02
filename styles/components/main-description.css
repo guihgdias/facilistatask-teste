@@ -1,0 +1,34 @@
+.main-description {
+    font-size: 1rem;
+    color: var(--white);
+    font-weight: lighter;
+}
+
+.main-description.-semidark {
+    color: var(--semi-dark);
+    font-weight: bold;
+}
+
+.main-description.-dark {
+    color: var(--dark);
+    font-family: 'GilroyBold';
+}
+
+.main-description.-small {
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+.main-description.-big {
+    font-size: 1.2rem;
+}
+
+.main-description.-warning {
+    color: var(--pink);
+    font-family: 'GilroyBold';
+}
+
+.main-description .name,
+.main-description .tasksCount {
+    color: var(--main);
+}

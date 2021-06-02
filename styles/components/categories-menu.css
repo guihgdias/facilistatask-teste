@@ -1,0 +1,10 @@
+.categories-menu {
+    width: 230px;
+    height: calc(100vh - 80px);
+    background: #F4FBFF;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

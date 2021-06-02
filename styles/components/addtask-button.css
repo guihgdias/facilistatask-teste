@@ -1,0 +1,14 @@
+.addtask-button {
+    background: var(--green);
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+    user-select: none;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

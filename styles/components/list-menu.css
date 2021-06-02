@@ -1,0 +1,43 @@
+.list-menu .list {
+    padding: 10px 0px;
+}
+
+.list-menu .list .label {
+    color: var(--dark);
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'GilroyBold';
+    text-decoration: none;
+}
+
+.list-menu .list .label::before {
+    content: '﹥';
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.list-menu .list .label:hover {
+    color: var(--main);
+}
+
+.list-menu .list .label.-active {
+    color: var(--main);
+}
+
+.list-menu .list .notification {
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    padding: 5px;
+    background: var(--main);
+    border-radius: 50%;
+    text-align: center;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: var(--white);
+}
+
+.list-menu.-margTop {
+    margin-top: 50px;
+}

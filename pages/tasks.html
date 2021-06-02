@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefas - FacilitaTasks</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/root.css">
+    <link rel="stylesheet" href="../styles/wrapper.css">
+    <link rel="stylesheet" href="../styles/tasks/tasks.css">
+    <link rel="stylesheet" href="../styles/components/vertical-menu.css">
+    <link rel="stylesheet" href="../styles/components/main-content.css">
+    <link rel="stylesheet" href="../styles/components/main-header.css">
+    <link rel="stylesheet" href="../styles/components/main-section.css">
+    <link rel="stylesheet" href="../styles/components/menu-box.css">
+    <link rel="stylesheet" href="../styles/components/profile-widget.css">
+    <link rel="stylesheet" href="../styles/components/categories-menu.css">
+    <link rel="stylesheet" href="../styles/components/main-title.css">
+    <link rel="stylesheet" href="../styles/components/second-title.css">
+    <link rel="stylesheet" href="../styles/components/list-menu.css">
+    <link rel="stylesheet" href="../styles/components/main-task.css">
+    <link rel="stylesheet" href="../styles/components/main-description.css">
+    <link rel="stylesheet" href="../styles/components/search-button.css">
+    <link rel="stylesheet" href="../styles/components/addtask-button.css">
+    <link rel="stylesheet" href="../styles/components/main-modal.css">
+    <link rel="stylesheet" href="../styles/components/main-button.css">
+    <link rel="stylesheet" href="../styles/components/label-input.css">
+</head>
+<body>
+    <div class="wrapper -noPd -flxSpbC">
+        <aside class="vertical-menu">
+            <img class="logo" src="../assets/images/logo/logo.png">
+            <div class="wrapper -noPd">
+                <div class="menu-box -active">
+                    <img class="icon" src="../assets/images/icons/dashboard.png">
+                    <span class="menuName">Dashboard</span>
+                </div>
+                <div class="menu-box">
+                    <img class="icon" src="../assets/images/icons/tasks.png">
+                    <span class="menuName">Tarefas</span>
+                </div>
+                <div class="menu-box">
+                    <img class="icon" src="../assets/images/icons/config.png">
+                    <span class="menuName">Configurações</span>
+                </div>
+            </div>
+        </aside>
+        <div class="tasks">
+            <header class="main-header -flexFlxend">
+                <div class="profile-widget">
+                    <img class="photo" src="../assets/images/profile/mw.png">
+                    <div class="wrapper -flxCol">
+                        <span class="name">Guilherme Henrique</span>
+                        <span class="job">Front-end Developer</span>
+                    </div>
+                </div>
+            </header>
+            <main class="main-content -flxSpbC">
+                <aside class="categories-menu">
+                    <div class="wrapper -margBot">
+                        <span class="second-title -bigSemidark">Categorias</span>
+                        <ul class="list-menu -margTop">
+                            <li class="list"><a class="label -active" href="#">Todas</a><div class="notification">5</div></li>
+                            <li class="list"><a class="label" href="#">Urgentes</a></li>
+                            <li class="list"><a class="label" href="#">Importantes</a></li>
+                            <li class="list"><a class="label" href="#">Outras</a></li>
+                            <li class="list"><a class="label" href="#">Finalizadas</a></li>
+                        </ul>
+                    </div>
+                </aside>
+                <section class="main-section">
+                    <div class="wrapper -tasks">
+                        <div class="wrapper -noPd">
+                            <h1 class="main-title -dark -normalcase -medium">Minhas Tarefas</h1>
+                            <span class="main-description -semidark">Olá <span class="name">Guilherme Henrique</span>, você tem <a class="tasksCount" href="#"><span class="tasksNumber">5</span> tarefas</a> pendentes.</span>
+                        </div>
+                        <div class="search-button">
+                            <input class="searchTask" type="text" placeholder="Buscar Tarefas">
+                            <div class="searchIcon">
+                                <img class="icon" src="../assets/images/icons/search.png">
+                            </div>
+                        </div>
+                        <div class="wrapper -noPd">
+
+                            <div class="main-task">
+                                <div class="wrapper -flxCC">
+                                    <input class="checkButton" type="checkbox">
+                                    <span class="taskName">Task name</span>
+                                </div>
+                                <div class="wrapper -flxCC">
+                                    <div class="actions">
+                                        <img src="../assets/images/icons/dots.png">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="main-task">
+                                <div class="wrapper -flxCC">
+                                    <input class="checkButton" type="checkbox">
+                                    <span class="taskName">Task name</span>
+                                </div>
+                                <div class="wrapper -flxCC">
+                                    <div class="actions">
+                                        <img src="../assets/images/icons/dots.png">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="addtask-button">
+                        <img class="icon" src="../assets/images/icons/add.png">
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <div class="main-modal -hidden">
+        <div class="modalArea">
+            <div class="iconArea">
+                <img class="icon" src="../assets/images/icons/trashcan.png">
+            </div>
+            <div class="wrapper -flexcolCC">
+                <span class="main-description -dark -big">Tem certeza que deseja <span class="main-description -warning -big">excluir</span> esta tarefa?</span>
+                <span class="main-description -semidark -small">Esta opção não poderá ser desfeita.</span>
+            </div>
+            <div class="wrapper -flxCC">
+                <button class="main-button -margAll -pdModal cancelAddTask">Cancelar</button>
+                <button class="main-button -margAll -pdModal -warning">Confirmar</button>
+            </div>
+        </div>
+    </div>
+    <div class="main-modal -hidden" id="addTaskModal">
+        <div class="modalArea">
+            <span class="main-title -normalcase -dark -medium -margBot">Cadastrar Tarefa</span>
+            <div class="wrapper -modalWidth -noPd">
+                <div class="label-input">
+                    <label class="labelText">Título:</label>
+                    <input class="inputText" type="text">
+                </div>
+                <div class="label-input">
+                    <label class="labelText" for="description">Descrição:</label>
+                    <textarea class="inputText -textArea" id="description"></textarea>
+                </div>
+            </div>
+            <div class="wrapper -flxSpbS -noPd">
+                <div class="wrapper -flxSpbC -noPd">
+                    <div class="label-input -margRight">
+                        <label class="labelText -flxCC">
+                            <input class="inputRadio" type="radio" id="urgent" name="priority" value="urgente">
+                            Urgente
+                        </label>
+                    </div>
+                    <div class="label-input">
+                        <label class="labelText -flxCC">
+                            <input class="inputRadio" type="radio" id="important" name="priority" value="important">
+                            Importante
+                        </label>
+                    </div>
+                </div>
+                <button class="main-button -fixWidth addNewTask">Adicionar</button>
+            </div>
+            <div class="closeModal">
+                <img src="../assets/images/icons/close.png">
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/components/addtask.js"></script>
+</body>
+</html>

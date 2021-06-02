@@ -1,0 +1,58 @@
+.wrapper {
+    padding: 15px;
+}
+
+.wrapper.-margBot {
+    margin-bottom: 100px;
+}
+
+.wrapper.-noPd {
+    padding: 0;
+}
+
+.wrapper.-modalWidth {
+    width: 600px;
+}
+
+.wrapper.-form {
+    max-width: 400px;
+    width: 100%;
+}
+
+.wrapper.-tasks {
+    max-width: 630px;
+    width: 100%;
+}
+
+.wrapper.-flxCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.wrapper.-flexcolCC {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper.-flxSpbC {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrapper.-flxSpbS {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.wrapper.-flxCC {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
