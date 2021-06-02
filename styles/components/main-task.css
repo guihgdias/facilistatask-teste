@@ -36,6 +36,9 @@
     color: var(--dark);
     font-size: 1.2rem;
     font-family: 'GilroyBold';
+    overflow: hidden;
+    max-width: 430px;
+    text-overflow: ellipsis;
 }
 
 .main-task .taskDescription {
