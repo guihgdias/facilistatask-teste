@@ -1,6 +1,6 @@
 .categories-menu {
     width: 230px;
-    height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
     background: #F4FBFF;
     z-index: 10;
     display: flex;

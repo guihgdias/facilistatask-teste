@@ -56,3 +56,13 @@
     justify-content: center;
     align-items: center;
 }
+
+.wrapper.-overflowXhYa {
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: 390px;
+}
+
+.wrapper.-borderBot {
+    border-bottom: 1px solid var(--lighter);
+}

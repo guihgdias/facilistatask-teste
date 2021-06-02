@@ -1,4 +1,4 @@
 .tasks {
     width: calc(100vw - 115px);
-    height: 100vh;
+    min-height: 100vh;
 }
