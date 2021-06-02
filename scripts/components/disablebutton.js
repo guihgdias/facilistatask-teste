@@ -1,14 +1,6 @@
 buttonAddTask.disabled = true;
 buttonAddTask.classList.add('-disable');
 
-nameNewTask.addEventListener("input", (e) => {
-  checkInputs()
-});
-
-descriptionNewTask.addEventListener("input", (e) => {
-  checkInputs()
-});
-
 function checkInputs() {
   let contentInput = nameNewTask.value;
   let contentINputDesc = descriptionNewTask.value;
@@ -20,3 +12,11 @@ function checkInputs() {
       buttonAddTask.classList.add('-disable');
     }
 }
+
+nameNewTask.addEventListener("input", (e) => {
+  checkInputs()
+});
+
+descriptionNewTask.addEventListener("input", (e) => {
+  checkInputs()
+});
