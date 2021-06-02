@@ -81,32 +81,7 @@
                                 <img class="icon" src="../../assets/images/icons/search.png">
                             </div>
                         </div>
-                        <div class="wrapper -noPd">
-
-                            <div class="main-task">
-                                <div class="wrapper -flxCC">
-                                    <input class="checkButton" type="checkbox">
-                                    <span class="taskName">Task name</span>
-                                </div>
-                                <div class="wrapper -flxCC">
-                                    <div class="actions">
-                                        <img src="../../assets/images/icons/dots.png">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="main-task">
-                                <div class="wrapper -flxCC">
-                                    <input class="checkButton" type="checkbox">
-                                    <span class="taskName">Task name</span>
-                                </div>
-                                <div class="wrapper -flxCC">
-                                    <div class="actions">
-                                        <img src="../../assets/images/icons/dots.png">
-                                    </div>
-                                </div>
-                            </div>
-
+                        <div class="wrapper -noPd -overflowXhYa" id="taskList">
                         </div>
                     </div>
                     <div class="addtask-button">
@@ -137,7 +112,7 @@
             <div class="wrapper -modalWidth -noPd">
                 <div class="label-input">
                     <label class="labelText">Título:</label>
-                    <input class="inputText" type="text">
+                    <input class="inputText" type="text" id="nameNewTask">
                 </div>
                 <div class="label-input">
                     <label class="labelText" for="description">Descrição:</label>
@@ -167,5 +142,6 @@
         </div>
     </div>
     <script src="../../scripts/components/addtask.js"></script>
+    <script src="../../scripts/components/showdesc.js"></script>
 </body>
 </html>
