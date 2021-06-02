@@ -79,5 +79,7 @@ function createTaskHtml(task) {
     actions.appendChild(actionsImage);
 
     modalAddTask.classList.add('-hidden');
+    buttonAddTask.disabled = true;
+    buttonAddTask.classList.add('-disable');
     return mainTask;
 }

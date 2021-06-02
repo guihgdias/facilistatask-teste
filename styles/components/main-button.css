@@ -13,6 +13,10 @@
     text-decoration: none;
 }
 
+.main-button.-disable {
+    background: var(--lighter);
+}
+
 .main-button.-fixWidth {
     width: 120px;
 }
