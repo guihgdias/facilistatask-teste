@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="../../styles/components/main-modal.css">
     <link rel="stylesheet" href="../../styles/components/main-button.css">
     <link rel="stylesheet" href="../../styles/components/label-input.css">
+    <link rel="stylesheet" href="../../styles/scroll.css">
 </head>
 <body>
     <div class="wrapper -noPd -flxSpbC">
@@ -81,7 +82,34 @@
                                 <img class="icon" src="../../assets/images/icons/search.png">
                             </div>
                         </div>
-                        <div class="wrapper -noPd -overflowXhYa" id="taskList">
+                        <div class="wrapper -noPd -scrollDown" id="taskList">
+                            <!--Structure task example
+                            <div class="main-task">
+                                <div class="wrapper -noPd">
+                                    <div class="wrapper -noPd -flxCC">
+                                        <input class="checkButton" type="checkbox">
+                                        <span class="taskName" id="taskName">Task Name</span>
+                                    </div>
+                                    <div class="wrapper -noPd -flxCC">
+                                        <div class="wrapper -noPd">
+                                            <span class="alert">Importante</span>
+                                            <span class="alert -warning">Urgente</span>
+                                        </div>
+                                        <div class="actions" id="openActions">
+                                            <img src="../../assets/images/icons/dots.png">
+                                            <div class="options" id="taskOptions">
+                                                <span class="option">Editar</span>
+                                                <span class="option">Excluir</span>
+                                                <img class="icon" src="../../assets/images/icons/dots-active.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="descriptionArea">
+                                    <p class="taskDescription">Eu sou uma descrição</p>
+                                </div>
+                            </div>
+                            -->
                         </div>
                     </div>
                     <div class="addtask-button">
@@ -141,8 +169,11 @@
             </div>
         </div>
     </div>
-    <script src="../../scripts/components/addtask.js"></script>
-    <script src="../../scripts/components/showdesc.js"></script>
-    <script src="../../scripts/components/disablebutton.js"></script>
+    <script src="../../scripts/components/addNewTask.js"></script>
+    <script src="../../scripts/components/showDescriptionTask.js"></script>
+    <script src="../../scripts/components/disableAddTaskButton.js"></script>
+    <script src="../../scripts/components/openActionsTask.js"></script>
+    <script src="../../scripts/components/deleteTask.js"></script>
+    <script src="../../scripts/components/updateTask.js"></script>
 </body>
 </html>
