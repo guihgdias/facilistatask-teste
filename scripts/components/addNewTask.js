@@ -61,7 +61,7 @@ function createTaskHtml(task) {
     wrapperTaskRightHTML.classList.add('wrapper', '-noPd', '-flxCC')
 
     let taskCheckButtonHTML = document.createElement('input')
-    taskCheckButtonHTML.classList.add('checkButton')
+    taskCheckButtonHTML.classList.add('input-checkbox')
     taskCheckButtonHTML.type = 'checkbox'
     taskCheckButtonHTML.setAttribute('onclick', 'finishTask('+task.id+')');
 

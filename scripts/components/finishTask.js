@@ -1,6 +1,6 @@
 function finishTask(idTask) {
     let thisTask = document.getElementById(''+idTask+'')
-    let thisCheck = thisTask.querySelector('.checkButton')
+    let thisCheck = thisTask.querySelector('.input-checkbox')
     let thisName = thisTask.querySelector('#taskName')
 
     if(thisCheck.classList.contains('-active') == false) {
