@@ -6,6 +6,10 @@
     margin-bottom: 100px;
 }
 
+.wrapper.-margTop {
+    margin-top: 20px;
+}
+
 .wrapper.-noPd {
     padding: 0;
 }
@@ -65,4 +69,13 @@
 
 .wrapper.-borderBot {
     border-bottom: 1px solid var(--lighter);
+}
+
+.wrapper.-borderTop {
+    border-top: 1px solid var(--lighter);
+}
+
+.wrapper.-scrollDown {
+    overflow-y: auto;
+    height: 500px;
 }

@@ -10,6 +10,12 @@
     outline-color: var(--main);
     width: 100%;
     margin: 30px 0px;
+    font-weight: bold;
+    color: var(--semi-dark);
+}
+
+.search-button .searchTask::placeholder {
+    color: var(--semi-dark);
 }
 
 .search-button .searchIcon {
