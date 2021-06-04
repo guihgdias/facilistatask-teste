@@ -63,6 +63,7 @@ function createTaskHtml(task) {
     let taskCheckButtonHTML = document.createElement('input')
     taskCheckButtonHTML.classList.add('checkButton')
     taskCheckButtonHTML.type = 'checkbox'
+    taskCheckButtonHTML.setAttribute('onclick', 'finishTask('+task.id+')');
 
     let taskNameHTML = document.createElement('span')
     taskNameHTML.classList.add('taskName')
