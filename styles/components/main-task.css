@@ -97,16 +97,17 @@
     color: var(--dark);
     font-size: 1.2rem;
     font-family: 'GilroyBold';
-    overflow: hidden;
-    max-width: 430px;
+    max-width: 380px;
     text-overflow: ellipsis;
     cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .main-task .taskDescription {
     padding: 15px 0px;
     color: var(--semi-dark);
-    word-break: break-all;
+    word-break: break-word;
     font-weight: bold;
     user-select: text;
 }

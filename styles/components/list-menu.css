@@ -1,5 +1,6 @@
 .list-menu .list {
     padding: 10px 0px;
+    display: flex;
 }
 
 .list-menu .list .label {
@@ -36,6 +37,19 @@
     font-weight: bold;
     font-size: 0.95rem;
     color: var(--white);
+    display: none;
+}
+
+.list-menu .list .notification.-active {
+    display: inline-block;
+}
+
+.list-menu .list .notification.-urgent {
+    background: var(--pink);
+}
+
+.list-menu .list .notification.-important {
+    background: var(--orange);
 }
 
 .list-menu.-margTop {
