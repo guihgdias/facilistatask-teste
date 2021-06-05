@@ -1,6 +1,6 @@
-var idTaskInfo = document.getElementById('deleteTaskModal').querySelector('.idTask')
+var idDeleteTask = document.getElementById('deleteTaskModal').querySelector('.idTask')
 
-function openCloseModal() {
+function openCloseDeleteModal() {
     let deleteTaskModal = document.getElementById('deleteTaskModal')
     if(deleteTaskModal.classList.contains('-hidden') == true) {
         deleteTaskModal.classList.remove('-hidden')
@@ -10,24 +10,23 @@ function openCloseModal() {
 }
 
 function deleteTask(idTask) {
-    openCloseModal()
-    idTaskInfo.value = idTask
-    let idTaskToDelete = idTaskInfo.value
+    openCloseDeleteModal()
+    idDeleteTask.value = idTask
 }
 
 let cancelDelete = document.getElementById('deleteTaskModal').querySelector('.cancelDeleteTask')
 let confirmDelete = document.getElementById('deleteTaskModal').querySelector('.confirmDeleteTask')
 
 cancelDelete.addEventListener('click', () => {
-    openCloseModal() 
+    openCloseDeleteModal() 
 })
 
 confirmDelete.addEventListener('click', () => {
-    let taskDeleted = idTaskInfo.value
+    let taskDeleted = idDeleteTask.value
     
     let thisTaskDeleted = document.getElementById(''+taskDeleted+'')
     if(thisTaskDeleted) {
         taskListArea.removeChild(thisTaskDeleted);
-        openCloseModal()
+        openCloseDeleteModal()
     }
 })
