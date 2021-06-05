@@ -70,6 +70,7 @@ function createTaskHtml(task) {
     taskNameHTML.setAttribute('id', 'taskName')
     taskNameHTML.setAttribute('onclick', 'show('+task.id+')');
     taskNameHTML.innerHTML = task.name
+    taskNameHTML.title = task.name
 
     let wrapperAlertsHTML = document.createElement('div')
     wrapperAlertsHTML.classList.add('wrapper', '-noPd')
