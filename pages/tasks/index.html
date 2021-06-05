@@ -63,9 +63,9 @@
                     <div class="wrapper -margBot">
                         <span class="second-title -bigSemidark">Categorias</span>
                         <ul class="list-menu -margTop">
-                            <li class="list"><a class="label -active" href="#">Todas</a><div class="notification">5</div></li>
-                            <li class="list"><a class="label" href="#">Urgentes</a></li>
-                            <li class="list"><a class="label" href="#">Importantes</a></li>
+                            <li class="list"><a class="label -active" href="#">Todas</a><div class="notification"></div></li>
+                            <li class="list"><a class="label" href="#">Urgentes</a><div class="notification -urgent"></div></li>
+                            <li class="list"><a class="label" href="#">Importantes</a><div class="notification -important"></div></li>
                             <li class="list"><a class="label" href="#">Outras</a></li>
                             <li class="list"><a class="label" href="#">Finalizadas</a></li>
                         </ul>
@@ -142,11 +142,11 @@
             <div class="wrapper -modalWidth -noPd">
                 <div class="label-input">
                     <label class="labelText">Título:</label>
-                    <input class="inputText" type="text" id="nameNewTask" maxlength="40">
+                    <input class="inputText" type="text" id="nameNewTask" maxlength="60">
                 </div>
                 <div class="label-input">
                     <label class="labelText" for="description">Descrição:</label>
-                    <textarea class="inputText -textArea" id="description" maxlength="255"></textarea>
+                    <textarea class="inputText -textArea" id="description" maxlength="300"></textarea>
                 </div>
             </div>
             <div class="wrapper -flxSpbS -noPd">
@@ -165,6 +165,28 @@
                     </div>
                 </div>
                 <button class="main-button -fixWidth addNewTask">Adicionar</button>
+            </div>
+            <div class="closeModal">
+                <img src="../../assets/images/icons/close.png">
+            </div>
+        </div>
+    </div>
+    <div class="main-modal -hidden" id="updateTaskModal">
+        <div class="modalArea">
+            <span class="main-title -normalcase -dark -medium -margBot">Editar</span>
+            <div class="wrapper -modalWidth -noPd">
+                <div class="label-input">
+                    <input class="idTask" type="text" hidden>
+                    <label class="labelText">Título:</label>
+                    <input class="inputText" type="text" id="nameUpdateTask" maxlength="60">
+                </div>
+                <div class="label-input">
+                    <label class="labelText" for="description">Descrição:</label>
+                    <textarea class="inputText -textArea" id="descriptionUpdateTask" maxlength="300"></textarea>
+                </div>
+            </div>
+            <div class="wrapper -flxSpbS -noPd">
+                <button class="main-button editTask">Salvar</button>
             </div>
             <div class="closeModal">
                 <img src="../../assets/images/icons/close.png">
