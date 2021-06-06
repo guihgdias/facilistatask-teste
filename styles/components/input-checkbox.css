@@ -18,7 +18,7 @@
     background-color: var(--checkbox);
 }
 
-.input-checkbox.-active::before {
+.input-checkbox.-checked::before {
     background-color: var(--green);
 }
 

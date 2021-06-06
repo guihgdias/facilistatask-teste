@@ -70,9 +70,9 @@
                         <div class="wrapper">
                             <span class="second-title -bigSemidark">Categorias</span>
                             <ul class="list-menu -margTop">
-                                <li class="list"><a class="label -active" href="#">Todas</a><div class="notification"></div></li>
-                                <li class="list"><a class="label" href="#">Urgentes</a><div class="notification -urgent"></div></li>
-                                <li class="list"><a class="label" href="#">Importantes</a><div class="notification -important"></div></li>
+                                <li class="list"><a class="label -active" href="#">Todas</a></li>
+                                <li class="list"><a class="label" href="#">Urgentes</a><div class="notification urgentTasks -urgent"></div></li>
+                                <li class="list"><a class="label" href="#">Importantes</a><div class="notification importantTasks -important"></div></li>
                                 <li class="list"><a class="label" href="#">Outras</a></li>
                                 <li class="list"><a class="label" href="#">Finalizadas</a></li>
                             </ul>
@@ -82,7 +82,7 @@
                         <div class="wrapper">
                             <div class="wrapper">
                                 <h1 class="main-title -dark -normalcase -medium">Minhas Tarefas</h1>
-                                <span class="main-description -semidark">Olá <span class="name">Guilherme Henrique</span>, você tem <a class="tasksCount" href="#"><span class="tasksNumber">5</span> tarefas</a> pendentes.</span>
+                                <span class="main-description -semidark">Olá <span class="name">Guilherme Henrique</span>, você tem <a class="tasksCount" href="#"><span class="tasksNumber">0</span> tarefas</a> pendentes.</span>
                             </div>
                             <div class="search-button">
                                 <input class="searchTask" type="text" placeholder="Buscar Tarefas">
@@ -91,9 +91,7 @@
                                 </div>
                             </div>
                             <div class="wrapper" id="taskList">
-                                <!--
-                                    Structure task example
-                                -->
+                            <!--Structure task example
                                 <div class="main-task">
                                     <div class="wrapper">
                                         <div class="wrapper">
@@ -119,9 +117,10 @@
                                         <p class="taskDescription">Eu sou uma descrição</p>
                                     </div>
                                 </div>
+                            -->
                             </div>
                         </div>
-                        <div class="addtask-button">
+                        <div class="addtask-button" id="newTaskButton">
                             <img class="icon" src="../../assets/images/icons/add.png" alt="Icone de Adição">
                         </div>
                     </section>
@@ -133,12 +132,12 @@
                 <span class="main-title -normalcase -dark -medium -margBot">Cadastrar Tarefa</span>
                 <div class="wrapper">
                     <div class="label-input">
-                        <label class="labelText">Título:</label>
+                        <label class="labelText" for="nameNewTask">Título:</label>
                         <input class="inputText" type="text" id="nameNewTask" maxlength="60">
                     </div>
                     <div class="label-input">
-                        <label class="labelText" for="description">Descrição:</label>
-                        <textarea class="inputText -textArea" id="description" maxlength="300"></textarea>
+                        <label class="labelText" for="descriptionNewTask">Descrição:</label>
+                        <textarea class="inputText -textArea" id="descriptionNewTask" maxlength="300"></textarea>
                     </div>
                 </div>
                 <div class="wrapper flex_row_sbetween">

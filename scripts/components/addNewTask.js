@@ -1,160 +1,228 @@
-var buttonOpenModal = document.querySelector('.addtask-button')
-var buttonCloseModal = document.querySelector('.closeModal')
-var modalAddTask = document.querySelector('#addTaskModal')
-var buttonAddTask = document.querySelector('.addNewTask')
-var nameNewTask = document.querySelector('#nameNewTask')
-var descriptionNewTask = document.querySelector('#description')
-var taskListArea = document.querySelector('#taskList')
-var isUrgentTask = document.getElementById('urgent')
-var isImportantTask = document.getElementById('important')
+const getTask = () => JSON.parse(localStorage.getItem('taskList')) ?? []
+const setTask = (database) => localStorage.setItem('taskList', JSON.stringify(database))
 
-buttonOpenModal.addEventListener('click', () => {
-    modalAddTask.classList.remove('-hidden')
-    let BodyHTML = document.querySelector('body').style = 'overflow: hidden'
-});
-
-buttonCloseModal.addEventListener('click', () => {
-    modalAddTask.classList.add('-hidden');
-    nameNewTask.value = ''
-    descriptionNewTask.value = ''
-    isUrgentTask.checked = false
-    isImportantTask.checked = false
-    BodyHTML = document.querySelector('body').style = 'overflow: auto'
-});
-
-buttonAddTask.addEventListener('click', () => {
-    let task = {
-        name: nameNewTask.value,
-        description: descriptionNewTask.value,
-        id: idGenerator(),
-    }
-    
-    BodyHTML = document.querySelector('body').style = 'overflow: auto'
-    addNewTask(task);
+document.getElementById('newTaskButton').addEventListener('click', () => {
+    document.getElementById('addTaskModal').classList.remove('-hidden')
 })
 
-function idGenerator() {
-    return Math.floor(Math.random() * 3000)
-}
+document.getElementById('addTaskModal').querySelector('.addNewTask').addEventListener('click', () => {
+    let taskPriority = 0
+    let isUrgent = document.getElementById('urgent')
+    let isImportant = document.getElementById('important')
+    let taskName = document.getElementById('nameNewTask')
+    let taskDescription = document.getElementById('descriptionNewTask')
+    let taskStatus = ''
 
-function addNewTask(task) {
-    let createTask = createTaskHtml(task)
-    taskListArea.appendChild(createTask)
-    nameNewTask.value = ''
-    descriptionNewTask.value = ''
-    isUrgentTask.checked = false
-    isImportantTask.checked = false
-}
-
-function createTaskHtml(task) {
-    let isUrgentTask = document.getElementById('urgent')
-    let isImportantTask = document.getElementById('important')
-
-    let mainTaskHTML = document.createElement('div')
-    mainTaskHTML.id = task.id
-    mainTaskHTML.classList.add('main-task')
-
-    let wrapperTaskHTML = document.createElement('div')
-    wrapperTaskHTML.classList.add('wrapper')
-
-    let wrapperTaskLeftHTML = document.createElement('div')
-    wrapperTaskLeftHTML.classList.add('wrapper', '-flxCC')
-
-    let wrapperTaskRightHTML = document.createElement('div')
-    wrapperTaskRightHTML.classList.add('wrapper', '-flxCC')
-
-    let taskCheckButtonHTML = document.createElement('input')
-    taskCheckButtonHTML.classList.add('input-checkbox')
-    taskCheckButtonHTML.type = 'checkbox'
-    taskCheckButtonHTML.setAttribute('onclick', 'finishTask('+task.id+')');
-
-    let taskNameHTML = document.createElement('span')
-    taskNameHTML.classList.add('taskName')
-    taskNameHTML.setAttribute('id', 'taskName')
-    taskNameHTML.setAttribute('onclick', 'show('+task.id+')');
-    taskNameHTML.innerHTML = task.name
-    taskNameHTML.title = task.name
-
-    let wrapperAlertsHTML = document.createElement('div')
-    wrapperAlertsHTML.classList.add('wrapper')
-
-    let alertImportantHTML = document.createElement('div')
-    alertImportantHTML.classList.add('alert')
-    let alertImportantTextHTML = document.createTextNode('Importante')
-    alertImportantHTML.appendChild(alertImportantTextHTML)
-
-    let alertUrgentHTML = document.createElement('div')
-    alertUrgentHTML.classList.add('alert', '-warning')
-    let alertUrgentTextHTML = document.createTextNode('Urgente')
-    alertUrgentHTML.appendChild(alertUrgentTextHTML)
-
-    if (isUrgentTask.checked) {
-        alertUrgentHTML.classList.add('-show')
-    } else if (isImportantTask.checked) {
-        alertImportantHTML.classList.add('-show')
+    if(isUrgent.checked == true) {
+        taskPriority = 1
+    } else if(isImportant.checked == true) {
+        taskPriority = 2
+    } else {
+        taskPriority = 0
     }
 
-    let actionsAreaHTML = document.createElement('div')
-    actionsAreaHTML.classList.add('actions')
-    actionsAreaHTML.setAttribute('id', 'openActions')
+    let databaseTasks = getTask()
+    databaseTasks.push({
+        taskName: taskName.value, 
+        taskDescription: taskDescription.value,
+        taskPriority: taskPriority,
+        taskStatus: taskStatus
+    })
     
-    let actionsImageHTML = document.createElement('img')
-    actionsImageHTML.src = '../../assets/images/icons/dots.png'
-    actionsImageHTML.setAttribute('onclick', 'openActionsFunc('+task.id+')');
+    setTask(databaseTasks)
 
-    let actionsImageActiveHTML = document.createElement('img')
-    actionsImageActiveHTML.classList.add('icon')
-    actionsImageActiveHTML.src = '../../assets/images/icons/dots-active.png'
-    actionsImageActiveHTML.setAttribute('onclick', 'openActionsFunc('+task.id+')');
+    document.getElementById('nameNewTask').value = ''
+    document.getElementById('descriptionNewTask').value = ''
+    isUrgent.checked = false
+    isImportant.checked = false
 
-    let optionsHTML = document.createElement('div')
-    optionsHTML.classList.add('options')
-    optionsHTML.setAttribute('id', 'taskOptions')
+    renderTasks()
+    closeModalAddTask()
+})
 
-    let optionEditHTML = document.createElement('span')
-    optionEditHTML.classList.add('option')
-    let optionEditTextHTML = document.createTextNode('Editar')
-    optionEditHTML.appendChild(optionEditTextHTML)
-    optionEditHTML.setAttribute('onclick', 'updateTask('+task.id+')');
-
-    let optionDeleteHTML = document.createElement('span')
-    optionDeleteHTML.classList.add('option')
-    let optionDeleteTextHTML = document.createTextNode('Deletar')
-    optionDeleteHTML.appendChild(optionDeleteTextHTML)
-    optionDeleteHTML.setAttribute('onclick', 'deleteTask('+task.id+')');
-
-    let descriptionAreaHTML = document.createElement('div')
-    descriptionAreaHTML.classList.add('descriptionArea')
-
-    let descriptionHTML = document.createElement('p')
-    descriptionHTML.classList.add('taskDescription')
-    descriptionHTML.innerHTML = task.description
-
-    mainTaskHTML.appendChild(wrapperTaskHTML)
-    
-    /*LeftArea*/
-    wrapperTaskHTML.appendChild(wrapperTaskLeftHTML)
-    wrapperTaskLeftHTML.appendChild(taskCheckButtonHTML)
-    wrapperTaskLeftHTML.appendChild(taskNameHTML)
-
-    /*RightArea*/
-    wrapperTaskHTML.appendChild(wrapperTaskRightHTML)
-    wrapperTaskRightHTML.appendChild(wrapperAlertsHTML)
-    wrapperAlertsHTML.appendChild(alertImportantHTML)
-    wrapperAlertsHTML.appendChild(alertUrgentHTML)
-    wrapperTaskRightHTML.appendChild(actionsAreaHTML)
-    actionsAreaHTML.appendChild(actionsImageHTML)
-    actionsAreaHTML.appendChild(optionsHTML)
-    optionsHTML.appendChild(optionEditHTML)
-    optionsHTML.appendChild(optionDeleteHTML)
-    optionsHTML.appendChild(actionsImageActiveHTML)
-
-    /*DescriptionArea*/
-    mainTaskHTML.appendChild(descriptionAreaHTML)
-    descriptionAreaHTML.appendChild(descriptionHTML)
-
-    modalAddTask.classList.add('-hidden');
-    buttonAddTask.disabled = true;
-    buttonAddTask.classList.add('-disable');
-    return mainTaskHTML;
+const closeModalAddTask = () => {
+    document.getElementById('addTaskModal').classList.add('-hidden')
+    document.getElementById('nameNewTask').value = ''
+    document.getElementById('descriptionNewTask').value = ''
+    let isUrgent = document.getElementById('urgent')
+    let isImportant = document.getElementById('important')
+    isUrgent.checked = false
+    isImportant.checked = false
 }
+
+document.getElementById('addTaskModal').querySelector('.closeModal').addEventListener('click', closeModalAddTask)
+
+const createTask = (taskTitle, taskDescription, taskPriority, index, status) => {
+    let item = document.createElement('div')
+    item.classList.add('main-task')
+    item.dataset.id = index
+
+    let isUrgent = ''
+    let isImportant = ''
+
+    switch(taskPriority) {
+        case 1:
+            isUrgent = '-show';
+            break;
+        case 2:
+            isImportant = '-show';
+            break;
+    }
+
+    item.innerHTML = `
+    <div class="wrapper">
+    <div class="wrapper">
+        <input class="input-checkbox" type="checkbox" data-key=${index}>
+        <span class="taskName" id="taskName" data-key=${index}>${taskTitle}</span>
+    </div>
+    <div class="wrapper">
+        <div class="wrapper">
+            <span class="alert ${isImportant}">Importante</span>
+            <span class="alert -warning ${isUrgent}">Urgente</span>
+        </div>
+        <div class="actions">
+            <img src="../../assets/images/icons/dots.png" class="openActions" data-key=${index}>
+            <div class="options" id="taskOptions">
+                <span class="option editOption" data-key=${index}>Editar</span>
+                <span class="option removeOption" data-key=${index}>Excluir</span>
+                <img class="icon closeActions" src="../../assets/images/icons/dots-active.png" data-key=${index}>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="descriptionArea">
+        <p class="taskDescription">${taskDescription}</p>
+    </div>
+    `
+
+    document.getElementById('taskList').appendChild(item)
+}
+ 
+const clearTasks = () => {
+    const taskList = document.getElementById('taskList')
+    while(taskList.firstChild) {
+        taskList.removeChild(taskList.lastChild)
+    }
+}
+
+const renderTasks = () => {
+    clearTasks()
+    let databaseTasks = getTask();
+    databaseTasks.forEach((item, index) => createTask(item.taskName, item.taskDescription, item.taskPriority, index, item.status))
+
+    for(i = 0; i < databaseTasks.length; i++) {
+        let mainElement = document.querySelector(`[data-id='${i}']`)
+        if(databaseTasks[i].taskStatus == 'checked') {
+            mainElement.classList.add('-finished')
+            mainElement.querySelector('.input-checkbox').classList.add('-checked')
+            mainElement.querySelector('.input-checkbox').checked = true
+            mainElement.querySelector('.taskName').classList.add('-finished')
+        }
+    }
+
+    let tasksCount = databaseTasks.length
+    let tasksNumber = document.querySelector('.tasksNumber')
+    tasksNumber.innerHTML = tasksCount
+
+    let urgentCount = databaseTasks.filter(urgent => urgent.taskPriority == 1)
+    console.log(urgentCount.length)
+    let urgentCountHTML = document.querySelector('.urgentTasks')
+    urgentCountHTML.innerHTML = urgentCount.length
+
+    if(urgentCount.length > 0) {
+        urgentCountHTML.classList.add('-active')
+    } else {
+        urgentCountHTML.classList.remove('-active')
+    }
+
+    let importantCount = databaseTasks.filter(important => important.taskPriority == 2)
+    console.log(importantCount.length)
+    let importantCountHTML = document.querySelector('.importantTasks')
+    importantCountHTML.innerHTML = importantCount.length
+
+    if(importantCount.length > 0) {
+        importantCountHTML.classList.add('-active')
+    } else {
+        importantCountHTML.classList.remove('-active')
+    }
+}
+
+const clickTask = (e) => {
+    let element = e.target
+    let index = element.dataset.key
+    let mainElement = document.querySelector(`[data-id='${index}']`)
+
+    if(element.classList.contains('taskName') == true) {
+        let descriptionTask = mainElement.querySelector('.descriptionArea')
+        if(descriptionTask.classList.contains('-open') == false) {
+            descriptionTask.classList.add('-open')
+        } else {
+            descriptionTask.classList.remove('-open')
+        }
+    }
+
+    if(element.classList.contains('input-checkbox')) {
+        let databaseTasks = getTask()
+        if(databaseTasks[index].taskStatus == '') {
+            mainElement.classList.add('-finished')
+            mainElement.querySelector('.input-checkbox').classList.add('-checked')
+            mainElement.querySelector('.taskName').classList.add('-finished')
+            databaseTasks[index].taskStatus = 'checked'
+            setTask(databaseTasks)
+            renderTasks()
+        } else {
+            mainElement.classList.remove('-finished')
+            mainElement.querySelector('.input-checkbox').classList.remove('-checked')
+            mainElement.querySelector('.taskName').classList.remove('-finished')
+            databaseTasks[index].taskStatus = ''
+            setTask(databaseTasks)
+            renderTasks()
+        }
+    }
+
+    if(element.classList.contains('openActions') == true) {
+        let taskActions = mainElement.querySelector('#taskOptions')
+        if(taskActions.classList.contains('-open') == false) {
+            taskActions.classList.add('-open')
+        }
+    }
+
+    if(element.classList.contains('closeActions') == true) {
+        let taskActions = mainElement.querySelector('#taskOptions')
+        if(taskActions.classList.contains('-open') == true) {
+            taskActions.classList.remove('-open')
+        }
+    }
+
+    if(element.classList.contains('editOption') == true) {
+        let editModal = document.getElementById('updateTaskModal')
+        let idTaskModal = editModal.querySelector('.idTask')
+        idTaskModal.value = index
+        let taskActions = mainElement.querySelector('#taskOptions')
+        let titleTaskValue = mainElement.querySelector('#taskName').innerHTML
+        let descriptionTaskValue = mainElement.querySelector('.taskDescription').innerHTML
+
+        if(editModal.classList.contains('-hidden') == true) {
+            editModal.classList.remove('-hidden')
+            taskActions.classList.remove('-open')
+            editModal.querySelector('#nameUpdateTask').value = titleTaskValue
+            editModal.querySelector('#descriptionUpdateTask').value = descriptionTaskValue
+        }
+    }
+
+    if(element.classList.contains('removeOption') == true) {
+        let removeModal = document.getElementById('deleteTaskModal')
+        let idTaskModal = removeModal.querySelector('.idTask')
+        idTaskModal.value = index
+        let taskActions = mainElement.querySelector('#taskOptions')
+        
+        if(removeModal.classList.contains('-hidden') == true) {
+            removeModal.classList.remove('-hidden')
+            taskActions.classList.remove('-open')
+        }
+    }
+}
+
+document.getElementById('taskList').addEventListener('click', clickTask)
+
+renderTasks()
