@@ -9,8 +9,10 @@ function openCloseUpdateModal() {
     let updateTaskModal = document.getElementById('updateTaskModal')
     if(updateTaskModal.classList.contains('-hidden') == true) {
         updateTaskModal.classList.remove('-hidden')
+        let BodyHTML = document.querySelector('body').style = 'overflow: hidden'
     } else {
         updateTaskModal.classList.add('-hidden')
+        BodyHTML = document.querySelector('body').style = 'overflow: auto'
     }
 }
 

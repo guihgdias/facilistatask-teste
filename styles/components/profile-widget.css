@@ -4,6 +4,10 @@
     align-items: center;
 }
 
+.profile-widget .wrapper {
+    margin-left: 10px;
+}
+
 .profile-widget .photo {
     width: 55px;
     height: 55px;

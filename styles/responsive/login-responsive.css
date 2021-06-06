@@ -1,0 +1,15 @@
+@media only screen and (max-width: 950px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .main-content .leftSide {
+        padding: 20px 0px;
+        width: 100vw;
+        height: 100%;
+    }
+
+    .main-content .rightSide > .wrapper {
+        padding: 0px 10px;
+    }
+}

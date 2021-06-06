@@ -9,7 +9,8 @@ var isUrgentTask = document.getElementById('urgent')
 var isImportantTask = document.getElementById('important')
 
 buttonOpenModal.addEventListener('click', () => {
-    modalAddTask.classList.remove('-hidden');
+    modalAddTask.classList.remove('-hidden')
+    let BodyHTML = document.querySelector('body').style = 'overflow: hidden'
 });
 
 buttonCloseModal.addEventListener('click', () => {
@@ -18,6 +19,7 @@ buttonCloseModal.addEventListener('click', () => {
     descriptionNewTask.value = ''
     isUrgentTask.checked = false
     isImportantTask.checked = false
+    BodyHTML = document.querySelector('body').style = 'overflow: auto'
 });
 
 buttonAddTask.addEventListener('click', () => {
@@ -26,7 +28,8 @@ buttonAddTask.addEventListener('click', () => {
         description: descriptionNewTask.value,
         id: idGenerator(),
     }
-
+    
+    BodyHTML = document.querySelector('body').style = 'overflow: auto'
     addNewTask(task);
 })
 
@@ -52,13 +55,13 @@ function createTaskHtml(task) {
     mainTaskHTML.classList.add('main-task')
 
     let wrapperTaskHTML = document.createElement('div')
-    wrapperTaskHTML.classList.add('wrapper', '-noPd')
+    wrapperTaskHTML.classList.add('wrapper')
 
     let wrapperTaskLeftHTML = document.createElement('div')
-    wrapperTaskLeftHTML.classList.add('wrapper', '-noPd', '-flxCC')
+    wrapperTaskLeftHTML.classList.add('wrapper', '-flxCC')
 
     let wrapperTaskRightHTML = document.createElement('div')
-    wrapperTaskRightHTML.classList.add('wrapper', '-noPd', '-flxCC')
+    wrapperTaskRightHTML.classList.add('wrapper', '-flxCC')
 
     let taskCheckButtonHTML = document.createElement('input')
     taskCheckButtonHTML.classList.add('input-checkbox')
@@ -73,7 +76,7 @@ function createTaskHtml(task) {
     taskNameHTML.title = task.name
 
     let wrapperAlertsHTML = document.createElement('div')
-    wrapperAlertsHTML.classList.add('wrapper', '-noPd')
+    wrapperAlertsHTML.classList.add('wrapper')
 
     let alertImportantHTML = document.createElement('div')
     alertImportantHTML.classList.add('alert')

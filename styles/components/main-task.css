@@ -31,10 +31,14 @@
 }
 
 .main-task > .wrapper {
-    width: 100%;
-    max-height: 80px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.main-task > .wrapper > .wrapper {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 

@@ -20,10 +20,6 @@
     background: var(--white);
     padding: 40px;
     border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: relative;
 }
 
@@ -46,4 +42,33 @@
     right: 0px;
     cursor: pointer;
     padding: 20px;
+}
+
+#addTaskModal .modalArea,
+#updateTaskModal .modalArea {
+    max-width: 660px;
+    width: 100%;
+}
+
+#addTaskModal .wrapp {
+    width: 100%;
+}
+
+#deleteTaskModal .modalArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#deleteTaskModal .modalArea .iconArea {
+    width: 135px;
+    height: 135px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#deleteTaskModal .modalArea > .wrapper {
+    margin-bottom: 25px;
 }

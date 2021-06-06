@@ -7,3 +7,8 @@
     align-items: center;
     padding: 50px 30px;
 }
+
+.main-section > .wrapper {
+    max-width: 635px;
+    width: 100%;
+}

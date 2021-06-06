@@ -1,48 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - FacilitaTasks</title>
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/root.css">
-    <link rel="stylesheet" href="styles/login/login.css">
-    <link rel="stylesheet" href="styles/wrapper.css">
-    <link rel="stylesheet" href="styles/components/main-content.css">
-    <link rel="stylesheet" href="styles/components/main-title.css">
-    <link rel="stylesheet" href="styles/components/second-title.css">
-    <link rel="stylesheet" href="styles/components/main-description.css">
-    <link rel="stylesheet" href="styles/components/label-input.css">
-    <link rel="stylesheet" href="styles/components/main-form.css">
-    <link rel="stylesheet" href="styles/components/main-button.css">
-</head>
-<body>
-    <main class="main-content login">
-        <div class="leftSide">
-            <div class="wrapper">
-                <img class="logo" src="assets/images/logo/logo.png" alt="FacilitaTasks Logo" title="FacilitTasks">
-                <h1 class="main-title">Facilita<span class="light">Tasks</span></h1>
-                <span class="main-description">Gestão de tarefas pessoais</span>
+    <head>
+        <title>Login - FacilitaTasks</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Login - FacilitaTasks">
+        <meta property="og:title" content="Login - FacilitaTasks">
+        <meta property="og:description" content="Gestão de tarefas pessoais">
+        <meta property="og:url" content="https://guihgdias.github.io/facilitatask-teste/">
+        <link rel="icon" href="assets/images/logo/logo.png">
+        <link rel="stylesheet" href="styles/reset.css">
+        <link rel="stylesheet" href="styles/root.css">
+        <link rel="stylesheet" href="styles/wrapper.css">
+        <link rel="stylesheet" href="styles/components/main-content.css">
+        <link rel="stylesheet" href="styles/components/main-title.css">
+        <link rel="stylesheet" href="styles/components/second-title.css">
+        <link rel="stylesheet" href="styles/components/main-description.css">
+        <link rel="stylesheet" href="styles/components/label-input.css">
+        <link rel="stylesheet" href="styles/components/main-form.css">
+        <link rel="stylesheet" href="styles/components/main-button.css">
+        <link rel="stylesheet" href="styles/responsive/login-responsive.css">
+    </head>
+    <body>
+        <main class="main-content login">
+            <div class="leftSide">
+                <div class="wrapper">
+                    <img class="logo" src="assets/images/logo/logo.png" alt="FacilitaTasks Logo" title="FacilitTasks">
+                    <h1 class="main-title">Facilita<span class="light">Tasks</span></h1>
+                    <span class="main-description">Gestão de tarefas pessoais</span>
+                </div>
             </div>
-        </div>
-        <div class="rightSide">
-            <div class="wrapper -form">
-                <h2 class="second-title -margBot">Entre com seus dados de acesso.</h2>
-                <form class="main-form">
-                    <div class="label-input">
-                        <label class="labelText" for="user">Nome de usuário ou e-mail:</label>
-                        <input class ="inputText" type="text" name="User" id="user">
-                    </div>
-                    <div class="label-input">
-                        <label class="labelText" for="password">Senha:</label>
-                        <input class ="inputText" type="password" name="Password" id="password">
-                    </div>
-                    <a class="main-button -margBot" href="pages/tasks/index.html">Entrar</a>
-                </form>
-                <a class="forgotPass" href="#">Esqueci minha senha</a>
+            <div class="rightSide">
+                <div class="wrapper -form">
+                    <h2 class="second-title -margBot">Entre com seus dados de acesso.</h2>
+                    <form class="main-form">
+                        <div class="label-input">
+                            <label class="labelText" for="user">Nome de usuário ou e-mail:</label>
+                            <input class ="inputText" type="text" name="User" id="user">
+                        </div>
+                        <div class="label-input">
+                            <label class="labelText" for="password">Senha:</label>
+                            <input class ="inputText" type="password" name="Password" id="password">
+                        </div>
+                        <a class="main-button -margBot" href="pages/tasks/index.html">Entrar</a>
+                    </form>
+                    <a class="forgotPass" href="#">Esqueci minha senha</a>
+                </div>
             </div>
-        </div>
-    </main>
-</body>
+        </main>
+    </body>
 </html>
