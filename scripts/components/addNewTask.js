@@ -38,6 +38,12 @@ document.getElementById('addTaskModal').querySelector('.addNewTask').addEventLis
 
     renderTasks()
     closeModalAddTask()
+
+    let buttonAddTask = document.querySelector('.addNewTask')
+    let buttonEditTask = document.querySelector('.editTask')
+
+    buttonAddTask.disabled = true;
+    buttonAddTask.classList.add('-disable');
 })
 
 const closeModalAddTask = () => {
