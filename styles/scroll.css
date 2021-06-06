@@ -3,13 +3,11 @@
     margin: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: var(--lighter); 
   border-radius: 5px;
 }
- 
-/* Handle */
+
 ::-webkit-scrollbar-thumb {
   background: var(--main);
   border-radius: 5px;

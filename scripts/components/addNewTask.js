@@ -131,7 +131,6 @@ const renderTasks = () => {
     tasksNumber.innerHTML = tasksCount
 
     let urgentCount = databaseTasks.filter(urgent => urgent.taskPriority == 1)
-    console.log(urgentCount.length)
     let urgentCountHTML = document.querySelector('.urgentTasks')
     urgentCountHTML.innerHTML = urgentCount.length
 
@@ -142,7 +141,6 @@ const renderTasks = () => {
     }
 
     let importantCount = databaseTasks.filter(important => important.taskPriority == 2)
-    console.log(importantCount.length)
     let importantCountHTML = document.querySelector('.importantTasks')
     importantCountHTML.innerHTML = importantCount.length
 
