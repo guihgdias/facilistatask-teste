@@ -8,8 +8,27 @@
         width: 100vw;
         height: 100%;
     }
+    
+    .main-content .leftSide > .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-content .leftSide > .wrapper .logo {
+        max-width: 100px;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
 
     .main-content .rightSide > .wrapper {
         padding: 0px 10px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    :root {
+        font-size: 12px;
     }
 }
